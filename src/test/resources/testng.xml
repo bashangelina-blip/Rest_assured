@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Default Suite">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+    <!-- preserve-order="true" — це ключ до успіху -->
+    <test name="PetAutomation"
+          preserve-order="true">
+        <classes>
+            <class name="positivetest.PetTest">
+                <methods>
+                    <include name="addNewPetTest"/>
+                    <include name="getPetByIdTest"/>
+                    <include name="updateExistingPetTest"/>
+                    <include name="findByStatusTest"/>
+                    <include name="deletePetTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="StoreAutomation"
+          preserve-order="true">
+    <classes>
+        <class name="positivetest.StoreTest">
+             <methods>
+                <include name="getInventoryTest"/>
+                <include name="placeNewOrderTest"/>
+                <include name="getOrderByIdTest"/>
+            </methods>
+        </class>
+    </classes>
+    </test>
+</suite>
