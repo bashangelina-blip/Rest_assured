@@ -43,6 +43,7 @@ public class PetNegativeTest extends BaseTest{
                 .getLong("id");
 
         Pet updatedPet = Pet.builder()
+                .id(petId)
                 .build();
 
         // Act
@@ -52,7 +53,6 @@ public class PetNegativeTest extends BaseTest{
         response.then()
                 .statusCode(200);
 
-        Pet result = response.as(Pet.class);
 
            }
 }

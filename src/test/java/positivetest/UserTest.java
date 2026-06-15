@@ -15,7 +15,7 @@ public class UserTest extends BaseTest {
     @Test
     public void createUserTest() {
         User user = UserFactory.defaultUser();
-        Response response = UserApi.createUser(user);
+        Response response = userApi.createUser(user);
         response.then()
                 .statusCode(200);
 
@@ -28,11 +28,11 @@ public class UserTest extends BaseTest {
     @Test
     public void getUserLoginTest(){
         User user = UserFactory.defaultUser();
-        Response createResponse = UserApi.createUser(user);
+        Response createResponse = userApi.createUser(user);
         String username = createResponse.jsonPath().getString("username");
         String password = createResponse.jsonPath().getString("password");
 
-        Response loginResponse = UserApi.getUserLogin(username, password);
+        Response loginResponse = userApi.getUserLogin(username, password);
 
         loginResponse.then()
                 .statusCode(200);

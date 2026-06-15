@@ -34,7 +34,7 @@ public class StoreTest extends BaseTest {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertNotNull(response);
         softAssert.assertNotNull(response.getBody());
-        softAssert.assertNotNull(savedOrderId);
+        softAssert.assertNotNull(BaseTest.savedOrderId);
 
         softAssert.assertAll();
 

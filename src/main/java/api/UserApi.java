@@ -12,12 +12,12 @@ public class UserApi extends BaseApi{
     private static final String USER_PATH = "/user";
 
     @Step("Create user")
-    public static Response createUser(User user){
+    public Response createUser(User user){
         return sendPostRequest(USER_PATH, user);
     }
 
     @Step("Get User Login: {username} {password}")
-    public static Response getUserLogin(String username, String password){
+    public Response getUserLogin(String username, String password){
         Map<String,String>credentials = new HashMap<>();
         credentials.put("username", username);
         credentials.put("password", password);

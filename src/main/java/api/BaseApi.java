@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class BaseApi {
 
-    protected static RequestSpecification requestSpecification() {
+    protected RequestSpecification requestSpecification() {
         return RestAssured.given()
                 .filter(new AllureRestAssured())
                 .baseUri(Config.BASE_URL)
@@ -20,7 +20,7 @@ public class BaseApi {
     }
 
     @Step("POST {endpoint}")
-    public static <T> Response sendPostRequest(String endpoint, T requestBody) {
+    public <T> Response sendPostRequest(String endpoint, T requestBody) {
         return requestSpecification()
                 .log().all()
                 .body(requestBody)
@@ -55,7 +55,7 @@ public class BaseApi {
 
 
     @Step("GET {endpoint} with query params")
-    public static Response sendGetRequestWithQueryParams(String endpoint, Map<String, ?> queryParams) {
+    public Response sendGetRequestWithQueryParams(String endpoint, Map<String, ?> queryParams) {
         return requestSpecification()
                 .queryParams(queryParams)
                 .log().all()
