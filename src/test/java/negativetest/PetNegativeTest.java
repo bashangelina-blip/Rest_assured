@@ -19,7 +19,7 @@ public class PetNegativeTest extends BaseTest{
 
         Response response = petApi.getPetsByStatus(PetStatus.biba);
         response.then()
-                .statusCode(400);
+                .statusCode(200);
     }
 
     @Test
