@@ -14,7 +14,7 @@ import java.util.List;
 
 public class PetTest extends BaseTest {
 
-    @Test
+    @Test(groups = {"smoke", "regression"})
     public void addNewPetTest() {
 
         Pet pet = PetFactory.defaultPet();
@@ -30,7 +30,7 @@ public class PetTest extends BaseTest {
         Assert.assertEquals(createdPet.getCategory().getName(), pet.getCategory().getName());
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void findByStatusTest() {
 
         Response response = petApi.getPetsByStatus(PetStatus.sold);
@@ -47,7 +47,7 @@ public class PetTest extends BaseTest {
         }
     }
 
-    @Test
+    @Test(groups = {"smoke", "regression"})
     public void getPetByIdTest() {
 
         Pet pet = PetFactory.defaultPet();
@@ -66,7 +66,7 @@ public class PetTest extends BaseTest {
         Assert.assertEquals(result.getStatuses(), pet.getStatuses());
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void updateExistingPetTest(){
 
         // Arrange
@@ -96,7 +96,7 @@ public class PetTest extends BaseTest {
         Assert.assertEquals(result.getName(), "UpdatedBaton");
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void deletePetTest() {
 
         Pet pet = PetFactory.defaultPet();

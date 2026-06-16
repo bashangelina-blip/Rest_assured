@@ -12,7 +12,7 @@ import testdata.UserFactory;
 public class UserTest extends BaseTest {
 
 
-    @Test
+    @Test(groups = {"smoke", "regression"})
     public void createUserTest() {
         User user = UserFactory.defaultUser();
         Response response = userApi.createUser(user);
@@ -25,7 +25,7 @@ public class UserTest extends BaseTest {
         softAssert.assertEquals(createdUser.getUsername(),user.getUsername());
         softAssert.assertEquals(createdUser.getId(), user.getId());
     }
-    @Test
+    @Test(groups = {"smoke", "regression"})
     public void getUserLoginTest(){
         User user = UserFactory.defaultUser();
         Response createResponse = userApi.createUser(user);

@@ -10,12 +10,12 @@ import org.testng.asserts.SoftAssert;
 
 public class StoreTest extends BaseTest {
 
-    @Test
+    @Test(groups = {"regression"})
     public void getInventoryTest(){
         Inventory inventory = storeApi.getStatusesWithQuantities();
     }
 
-    @Test
+    @Test(groups = {"smoke", "regression"})
     public void placeNewOrderTest(){
         Order newOrder = Order.builder()
                 .id(System.currentTimeMillis())
@@ -41,7 +41,7 @@ public class StoreTest extends BaseTest {
 
     }
 
-    @Test(dependsOnMethods = "placeNewOrderTest")
+    @Test(dependsOnMethods = {"placeNewOrderTest"}, groups = {"smoke", "regression"})
     public void getOrderByIdTest(){
         Order order = storeApi.getOrderById(BaseTest.savedOrderId);
         SoftAssert softAssert = new SoftAssert();

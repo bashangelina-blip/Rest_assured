@@ -12,7 +12,7 @@ public class BaseTest {
     protected StoreApi storeApi;
     protected UserApi userApi;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup(){
         petApi = new PetApi();
         storeApi = new StoreApi();
