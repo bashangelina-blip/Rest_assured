@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools{
+    jdk 'Java'
+    }
 
     // Тут ти створюєш випадаюче меню в Jenkins
     parameters {
