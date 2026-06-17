@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools{
     jdk 'Java'
+    allure 'Allure'
     }
 
     // Тут ти створюєш випадаюче меню в Jenkins
